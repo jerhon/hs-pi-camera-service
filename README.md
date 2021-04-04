@@ -2,6 +2,8 @@
 
 This runs a .NET application which takes pictures via the Raspberry Pi camera and serves them via a WebApi.
 
+IMPORTANT: This DOES NOT have any authentication on it, so do not put it on a public network.
+
 ## Prerequisites
 
 * Camera enabled via rasp-config 
