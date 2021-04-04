@@ -1,0 +1,12 @@
+﻿[Unit]
+Description=Raspberry Pi Camera Service http://*:5080/camera
+After=multi-user.target
+
+[Service]
+WorkingDirectory=/home/pi/camera-svc
+ExecStart=/home/pi/.dotnet/dotnet /home/pi/camera-svc/Honlsoft.Pi.CameraService.dll
+Environment="DOTNET_HOME=/home/pi/.dotnet"
+User=pi
+
+[Install]
+WantedBy=multi-user.target
