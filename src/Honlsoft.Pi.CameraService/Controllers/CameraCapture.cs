@@ -18,11 +18,9 @@ namespace Honlsoft.Pi.CameraService.Controllers
             _options = options;
         }
         
-        public async Task<ImageCapture> GetImageAsync()
+        public async Task<ImageCapture> GetImageAsync(CancellationToken cancellationToken)
         {
-            var tokenSource = new CancellationTokenSource();
-            tokenSource.CancelAfter(_options.Value.Timeout);
-            var image = await Unosquare.RaspberryIO.Pi.Camera.CaptureImageAsync(new CameraStillSettings(){ CaptureWidth  = _options.Value.Width, CaptureHeight = _options.Value.Height }, tokenSource.Token);
+            var image = await Unosquare.RaspberryIO.Pi.Camera.CaptureImageAsync(new CameraStillSettings(){ CaptureWidth  = _options.Value.Width, CaptureHeight = _options.Value.Height, }, cancellationToken);
             return new ImageCapture(image, DateTime.Now);
         }
     }
