@@ -9,10 +9,10 @@ IMPORTANT: This DOES NOT have any authentication on it, so do not put it on a pu
 * Camera enabled via rasp-config 
   * `sudo raspi-config`
   * Should be the option under interfaces
-* Setup .NET Core 5 on the raspberry pi for the pi user
+* Setup .NET Core 5 on the raspberry pi for the "pi" linux user
 * Build and transfer the build output to the raspberry pi
 * Optionally, install as a service.  (Check the paths in camera.service and modify as appropriate)
-  * Heres a good tutorial on that: https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup#method-3-systemd
+  * Here's a good tutorial on that: https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup#method-3-systemd
   * I included a sample .service file that can go in /etc/systemd/system/multi-user.target.wants/ on Raspbian assuming everything is installed in the same paths
   * I suggest try to run it by itself first to make sure everything is set up right, then later run it as a service.  Make sure to check with journalctl to ensure the service starts up right.
   
@@ -24,10 +24,10 @@ The interval at which it takes pictures is defined via the application settings.
 Take a look in there if you wish to modify.
 
 Camera
-* Interval - The interval between which picture snaps.
-* Timeout - Amount of time before a picture is considered.
-* Width - The width of the captured image.
-* Height - The height of the captured image.
+* Interval - The interval between picture snaps.
+* Timeout - Amount of time before a picture is considered timed out.
+* Width - The width of the captured image. 0 = Maximum Width
+* Height - The height of the captured image. 0 = Maximum Height
 
 ## TODO
 
