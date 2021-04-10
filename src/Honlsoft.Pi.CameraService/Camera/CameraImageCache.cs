@@ -1,4 +1,4 @@
-﻿namespace Honlsoft.Pi.CameraService.Controllers
+﻿namespace Honlsoft.Pi.CameraService.Camera
 {
     /// <summary>
     /// Caches the latest Image Capture from the camera.

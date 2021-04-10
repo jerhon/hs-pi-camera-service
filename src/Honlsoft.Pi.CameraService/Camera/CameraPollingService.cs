@@ -7,20 +7,18 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Honlsoft.Pi.CameraService
+namespace Honlsoft.Pi.CameraService.Camera
 {
     /// <summary>
     /// Polls the camera, taking image captures and saving them in the image cache.
     /// </summary>
     public class CameraPollingService : IHostedService
     {
-        // TODO: Add some error handling in here.  Additionally, should just continuously poll and get images from the camera on a dedicated Task/Thread rather than using a timer.
-
-        private IOptions<CameraOptions> _options;
+        private readonly IOptions<CameraOptions> _options;
         private readonly CameraCapture _capture;
         private readonly CameraImageCache _cache;
         private readonly CancellationTokenSource _cancelTokenSource;
-        private ILogger _logger;
+        private readonly ILogger _logger;
         private Task _pollingTask;
         
         public CameraPollingService(IOptions<CameraOptions> options, CameraCapture capture, CameraImageCache imageCache, ILogger<CameraPollingService> logger)

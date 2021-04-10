@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Honlsoft.Pi.CameraService.Controllers
+namespace Honlsoft.Pi.CameraService.Camera
 {
       
     public record ImageCapture(byte[] data, DateTime time);

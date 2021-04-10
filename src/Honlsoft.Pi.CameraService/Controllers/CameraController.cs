@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Mime;
+using Honlsoft.Pi.CameraService.Camera;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Honlsoft.Pi.CameraService.Controllers

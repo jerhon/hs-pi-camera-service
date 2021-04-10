@@ -1,4 +1,4 @@
-using Honlsoft.Pi.CameraService.Controllers;
+using Honlsoft.Pi.CameraService.Camera;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -41,9 +41,7 @@ namespace Honlsoft.Pi.CameraService
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Honlsoft.Pi.CameraService v1"));
             }
-
-            //app.UseHttpsRedirection();
-
+            
             app.UseRouting();
 
             app.UseAuthorization();
