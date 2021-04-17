@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Unosquare.WiringPi;
 
 namespace Honlsoft.Pi.CameraService
 {
@@ -7,6 +8,8 @@ namespace Honlsoft.Pi.CameraService
     {
         public static void Main(string[] args)
         {
+            Unosquare.RaspberryIO.Pi.Init<BootstrapWiringPi>();
+            
             CreateHostBuilder(args).Build().Run();
         }
 

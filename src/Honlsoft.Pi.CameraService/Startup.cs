@@ -1,4 +1,5 @@
 using Honlsoft.Pi.CameraService.Camera;
+using Honlsoft.Pi.Hardware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,8 +29,12 @@ namespace Honlsoft.Pi.CameraService
             });
             services.AddHostedService<CameraPollingService>();
             services.Configure<CameraOptions>(Configuration.GetSection("Camera"));
+            services.Configure<ServoOptions>(Configuration.GetSection("Servo"));
             services.AddSingleton<CameraImageCache>();
             services.AddSingleton<CameraCapture>();
+            services.AddSingleton(Unosquare.RaspberryIO.Pi.I2C.AddDevice(0x40));
+            services.AddSingleton<Pca9685>();
+            services.AddSingleton<Servo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

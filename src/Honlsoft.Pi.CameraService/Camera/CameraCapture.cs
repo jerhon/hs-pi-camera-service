@@ -26,6 +26,10 @@ namespace Honlsoft.Pi.CameraService.Camera
         public async Task<ImageCapture> GetImageAsync(CancellationToken cancellationToken)
         {
             var image = await Unosquare.RaspberryIO.Pi.Camera.CaptureImageAsync(new CameraStillSettings(){ CaptureWidth  = _options.Value.Width, CaptureHeight = _options.Value.Height, }, cancellationToken);
+            if (image.Length == 0)
+            {
+                throw new InvalidOperationException("No data in image.");
+            }
             return new ImageCapture(image, DateTime.Now);
         }
     }
