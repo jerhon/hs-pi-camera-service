@@ -9,7 +9,7 @@ namespace Honlsoft.Pi.CameraService.Camera
     /// <summary>
     /// Captures images from a Raspberry Pi.
     /// </summary>
-    public class CameraCapture
+    public class CameraCapture: ICameraCapture
     {
         private readonly IOptions<CameraOptions> _options;
 

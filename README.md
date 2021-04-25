@@ -22,7 +22,6 @@ IMPORTANT: This DOES NOT have any authentication on it, so do not put it on a pu
 
 * 3D Print https://www.thingiverse.com/thing:4710301
 * These are the PCA9685 boards I'm using: https://www.amazon.com/gp/product/B07WS5XY63
-  * This board also requires external power
 * These are the servos I'm using: https://www.amazon.com/gp/product/B07L2SF3R4
 
 Other PCA9685 boards and servos will likely work, but would need parameters tweaked in the appsettings.json according to device specifications.
@@ -64,4 +63,3 @@ This is not actively sensing the position of the servo.
 * Would be nice to run in a docker container, but the Pi library I'm using to perform the camera capture is calling raspberry pi camera commandline app to get the captures.
 * Current library for the camera is SLOW, need to use something better 
   * This is an option `https://github.com/techyian/MMALSharp`
-* The servo is jittery at times  

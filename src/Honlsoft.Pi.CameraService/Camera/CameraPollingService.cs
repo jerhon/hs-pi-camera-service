@@ -15,13 +15,13 @@ namespace Honlsoft.Pi.CameraService.Camera
     public class CameraPollingService : IHostedService
     {
         private readonly IOptions<CameraOptions> _options;
-        private readonly CameraCapture _capture;
+        private readonly ICameraCapture _capture;
         private readonly CameraImageCache _cache;
         private readonly CancellationTokenSource _cancelTokenSource;
         private readonly ILogger _logger;
         private Task _pollingTask;
         
-        public CameraPollingService(IOptions<CameraOptions> options, CameraCapture capture, CameraImageCache imageCache, ILogger<CameraPollingService> logger)
+        public CameraPollingService(IOptions<CameraOptions> options, ICameraCapture capture, CameraImageCache imageCache, ILogger<CameraPollingService> logger)
         {
             _options = options;
             _capture = capture;

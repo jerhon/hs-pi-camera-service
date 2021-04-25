@@ -22,7 +22,6 @@ namespace Honlsoft.Pi.CameraService.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            // TODO: eventually have a background service that takes a picture every X seconds, then have this just return the latest.
             var lastImage = _imageCache.LatestImage;
             if (lastImage == null)
             {

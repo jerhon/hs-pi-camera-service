@@ -28,13 +28,15 @@ namespace Honlsoft.Pi.CameraService
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Honlsoft.Pi.CameraService", Version = "v1" });
             });
             services.AddHostedService<CameraPollingService>();
+            services.AddHostedService<MmalInitialization>();
             services.Configure<CameraOptions>(Configuration.GetSection("Camera"));
             services.Configure<ServoOptions>(Configuration.GetSection("Servo"));
             services.AddSingleton<CameraImageCache>();
-            services.AddSingleton<CameraCapture>();
             services.AddSingleton(Unosquare.RaspberryIO.Pi.I2C.AddDevice(0x40));
             services.AddSingleton<Pca9685>();
             services.AddSingleton<Servo>();
+            services.AddSingleton<ICameraCapture, MmalCameraCapture>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
