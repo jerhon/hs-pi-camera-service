@@ -8,7 +8,7 @@ COPY src/Honlsoft.Pi.CameraService/Honlsoft.Pi.CameraService.csproj /app/src/Hon
 COPY src/Honlsoft.Pi.Hardware/Honlsoft.Pi.Hardware.csproj /app/src/Honlsoft.Pi.Hardware/Honlsoft.Pi.Hardware.csproj
 COPY src/Honlsoft.Pi.CameraService.sln /app/src/Honlsoft.Pi.CameraService.sln
 WORKDIR /app/src
-RUN dotnet restore
+RUN dotnet restore -r linux-arm
 
 # Publish the application
 COPY src /app/src
