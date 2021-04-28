@@ -16,7 +16,7 @@ WORKDIR /app/src/Honlsoft.Pi.CameraService/
 RUN dotnet publish -o /app/out
 
 # Set up the final image
-FROM mcr.microsoft.com/dotnet/aspnet:5.0
+FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim-arm32v7
 COPY --from=build /app/out /app
 WORKDIR /app/out
-ENTRYPOINT ["dotnet", "Honlsoft.Pi.CameraService"]
+ENTRYPOINT ["dotnet", "./Honlsoft.Pi.CameraService.dll"]
