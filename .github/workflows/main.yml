@@ -1,8 +1,10 @@
 ﻿name: 'Continuous Integration'
+
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
+   
 jobs:
   docker:
     runs-on: ubuntu-latest
