@@ -23,7 +23,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: user/app:latest
+          tags: jerhon/hs-pi-camera-service:latest
           platforms: linux/arm/v7
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
